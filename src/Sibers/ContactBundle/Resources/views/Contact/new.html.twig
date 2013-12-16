@@ -1,0 +1,16 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>{{ 'Contact creation' | trans }}</h1>
+    {% form_theme form 'SibersContactBundle:Form:bootstrap_theme.html.twig' %}
+    {{ form(form) }}
+
+    <ul class="record_actions list-unstyled">
+        <li>
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <a href="{{ path('contact') }}">
+                {{ 'Back to the list' | trans }}
+            </a>
+        </li>
+    </ul>
+{% endblock %}

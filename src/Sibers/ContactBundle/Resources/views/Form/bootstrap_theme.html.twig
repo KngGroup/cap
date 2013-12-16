@@ -1,0 +1,52 @@
+{% extends 'form_div_layout.html.twig' %}
+
+{% block form_start %}
+{% spaceless %}
+    {% set attr = attr | merge({'class': 'form-horizontal', 'role': 'form'}) %}
+    {{ parent() }}
+{% endspaceless %}
+{% endblock form_start %}
+
+{% block form_row %}
+{% spaceless %}
+    <div class="form-group">
+        {{ form_label(form) }}
+        <div class="col-sm-5">
+            {{ form_widget(form) }}
+            {{ form_errors(form) }}
+        </div>
+    </div>
+{% endspaceless %}
+{% endblock form_row %}
+
+{% block form_label %}
+{% spaceless %}
+    {% set label_attr = label_attr|merge({'class': (label_attr.class|default('') ~ ' col-sm-2 control-label')|trim}) %}
+    {{ parent() }}
+{% endspaceless %}
+{% endblock form_label %}
+
+{% block form_widget_simple %}
+{% spaceless %}
+    {% set attr = attr|merge({'class': (attr.class|default('') ~ ' form-control')|trim}) %}
+    {{ parent() }}
+{% endspaceless %}
+{% endblock form_widget_simple %}
+
+{% block submit_widget %}
+{% spaceless %}
+    {% set type = type|default('submit') %}
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-5">
+            {{ block('button_widget') }}
+        </div>
+    </div>
+{% endspaceless %}
+{% endblock submit_widget %}
+
+{% block button_widget %}
+{% spaceless %}
+     {% set attr = attr|merge({'class': (attr.class|default('') ~ ' btn btn-default')|trim}) %}
+    {{ parent() }}
+{% endspaceless %}
+{% endblock button_widget %}

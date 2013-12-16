@@ -1,0 +1,5 @@
+sibers_contact:
+    resource: "@SibersContactBundle/Controller/"
+    type:     annotation
+    prefix:   /
+

@@ -1,0 +1,49 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <div class="row">
+        <h1> {{ 'Contact' | trans }}</h1>
+        <div class="row">
+            <div class="col-md-2">
+                {% set avatar = entity.webPath ? : 'img/contact.jpg' %}
+                <img class="img-circle" width="140" height="140" src="{{ asset(avatar) }}" />
+                <ul class="record_actions list-unstyled">
+                    <li>
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <a href="{{ path('contact') }}">
+                            {{ 'List' | trans }}
+                        </a>
+                    </li>
+                    <li>
+                        <span class="glyphicon glyphicon-edit"></span>
+                        <a href="{{ path('contact_edit', { 'id': entity.id }) }}">{{ 'edit' | trans }}</a>
+                    </li>
+                    <li>{{ form(delete_form) }}</li>
+                </ul>
+            </div>
+            <div class="col-lg-10">
+                <table id="contact_info" class="record_properties table table-striped col-lg-5">
+                    <tbody>
+                        <tr>
+                            <th>{{ 'Id' | trans }}</th>
+                            <td>{{ entity.id }}</td>
+                        </tr>
+                        <tr>
+                            <th>{{ 'Firstname' }}</th>
+                            <td>{{ entity.firstname }}</td>
+                        </tr>
+                        <tr>
+                            <th>{{ 'Lastname' | trans }}</th>
+                            <td>{{ entity.lastname }}</td>
+                        </tr>
+                        <tr>
+                            <th>{{ 'Phone' | trans }}</th>
+                            <td>{{ entity.phone }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>    
+        </div>
+        
+    </div>
+{% endblock %}
