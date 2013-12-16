@@ -59,6 +59,18 @@ doctrine:
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
         auto_mapping: true
+        
+jms_translation:
+  source_language: en
+  configs:
+    app:
+      dirs: [%kernel.root_dir%/../src/Sibers/ContactBundle]
+      output_dir: %kernel.root_dir%/../src/Sibers/ContactBundle/Resources/translations
+      excluded_names: [*TestCase.php, *Test.php, Load*.php]
+      excluded_dirs: [cache, data, logs, DataFixtures, Fixtures, Features]
+      ignored_domains: []
+      keep: true
+      output_format: xliff
 
 # Swiftmailer Configuration
 swiftmailer:
