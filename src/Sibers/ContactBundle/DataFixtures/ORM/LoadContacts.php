@@ -17,7 +17,7 @@ class LoadContacts implements FixtureInterface
     {
         $brian = new Contact();
         $brian->setFirstname('Brian')
-              ->setFirstname('O`Conner')
+              ->setFirstname("O'Conner")
               ->setPhone('+19008005040');
         
         $manager->persist($brian);
