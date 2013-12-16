@@ -18,14 +18,14 @@ class LoadContacts implements FixtureInterface
         $brian = new Contact();
         $brian->setFirstname('Brian')
               ->setLastname("O'Conner")
-              ->setPhone('+19008005040');
+              ->setPhone('+19008005041');
         
         $manager->persist($brian);
         
         $dominic = new Contact();
         $dominic->setFirstname('Dominic')
                 ->setLastname('Toretto')
-                ->setPhone('+19008001012');
+                ->setPhone('+19008001011');
                 
         $manager->persist($dominic);
         $manager->flush();
