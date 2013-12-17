@@ -44,6 +44,13 @@ class Contact
      */
     private $phone;
     
+     /**
+     * @var string
+     *
+     * @ORM\Column(name="address", type="string", length=255, nullable=true)
+     */
+    private $address;
+    
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
@@ -258,5 +265,28 @@ class Contact
     public function getAvatar()
     {
         return $this->avatar;
+    }
+
+    /**
+     * Set address
+     *
+     * @param string $address
+     * @return Contact
+     */
+    public function setAddress($address)
+    {
+        $this->address = $address;
+
+        return $this;
+    }
+
+    /**
+     * Get address
+     *
+     * @return string 
+     */
+    public function getAddress()
+    {
+        return $this->address;
     }
 }
